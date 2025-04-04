@@ -67,13 +67,14 @@
             errorToast('Password is required')
         }
         else{
+        
             showLoader();
             let res=await axios.post("/user-registration",{
-                email:email,
-                firstName:firstName,
-                lastName:lastName,
-                mobile:mobile,
-                password:password
+               'email':email,
+                'firstName':firstName,
+               'lastName':lastName,
+                'mobile':mobile,
+                'password':password
             })
             hideLoader();
             if(res.status===200 && res.data['status']==='success'){

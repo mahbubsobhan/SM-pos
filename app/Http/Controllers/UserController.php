@@ -72,11 +72,13 @@ class UserController extends Controller
         
         $email = $request->input('email');
         $password = $request->input('password');
-        $user = User::where('email','=',$request->input('email') )
-        ->where('password','=',$request->input('password'))
-        ->select('id')->first();
+        
 
-        if ($user !==null) {
+        $user = User::where('email',$email )->where('password',$password)
+        ->first();
+
+        if ($user) {
+            
             $token = JWTToken::CreateToken($email,$user->id);
             
 // avabe chilo r k

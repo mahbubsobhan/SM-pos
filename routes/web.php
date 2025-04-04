@@ -23,7 +23,7 @@ Route::get('/user-profile',[UserController::class,'UserProfile'])->middleware([T
 
 Route::POST('/user-update',[UserController::class,'updateProfile'])->middleware([TokenVerificationMiddleware::class]);
 // Page Route
-Route::get('/',[HomeController::class,'HomePage']);
+Route::get('/',[UserController::class,'LoginPage']);
 Route::get('/userLogin',[UserController::class,'LoginPage']);
 Route::get('/userRegistration',[UserController::class,'RegistrationPage']);
 Route::get('/sendOtp',[UserController::class,'SendOtpPage']);
