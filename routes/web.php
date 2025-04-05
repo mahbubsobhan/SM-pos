@@ -12,7 +12,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Middleware\TokenVerificationMiddleware;
 
-// Api Routes
+//  Routes
 Route::POST('/user-registration',[UserController::class,'UserRegistration']);
 Route::POST('/user-login',[UserController::class,'UserLogin']);
 Route::POST('/send-otp',[UserController::class,'SendOTPCode']);
